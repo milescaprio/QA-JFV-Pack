@@ -1,15 +1,27 @@
-#gamemode adventure @a[x=32,y=-64,z=0,dx=47,dy=383,dz=47,m=!adventure,tag=!op]
-#gamemode survival @a[x=32,y=-64,z=0,dx=47,dy=383,dz=47,m=!survival,tag=!op]
-#tell @a[x=56,y=83,z=24,distance=24..] get in of circle
-#tell @a[x=56,y=83,z=24,distance=..24] get out circle
-#tell @a[x=32,z=0,dx=47,dz=47,tag=!op] get out of circle
-#tell @a[z=-1,dz=-65535,tag=!op] get in the circle
-#tell @a[z=48,dz=65535,tag=!op] get in the circle
-#tell @a[x=31,dx=-65535,tag=!op] get in the circle
-#tell @a[x=80,dx=65535,tag=!op] get in the circle
-#tell @a[x=31,y=-100,z=-1,dx=-65535,dy=500,dz=-65535,tag=!op] get in the circle
-#tell @a[x=80,y=-100,z=48,dx=65535,dy=500,dz=65535,tag=!op] get in the circle
 tag @a remove spawnZone
+tag @a remove depositing
+tag @a remove withdrawing
+scoreboard players enable @a deposit
+scoreboard players enable @a withdraw
+
 tag @a[x=32,y=-100,z=0,dx=47,dy=500,dz=47] add spawnZone
 gamemode adventure @a[tag=spawnZone,tag=!op,gamemode=!adventure]
 gamemode survival @a[tag=!spawnZone,tag=!op,gamemode=!survival]
+
+execute as @a[scores={deposit=1..}] run execute store success score @s deduceSucess run clear @s diamond 1
+execute as @a[scores={deposit=1..}] run execute if score @s deduceSucess matches 1 run tag @s add depositing
+#execute as @a[tag=depositing] run say depositing;
+#execute as @a[tag=!depositing] run say not depositing;
+scoreboard players reset @a[scores={deposit=1..}] deduceSucess
+execute as @a[tag=depositing] run scoreboard players add @s Diamond_Bank 1
+execute as @a[tag=depositing] run scoreboard players remove @s deposit 1
+tell @a[tag=!depositing,scores={deposit=1..}] You don't have that many to deposit!
+execute as @a[tag=!depositing,scores={deposit=1..}] run scoreboard players set @s deposit 0
+
+execute as @a[scores={withdraw=1..}] run scoreboard players remove @s Diamond_Bank 1
+execute as @a[scores={withdraw=1..,Diamond_Bank=0..}] run tag @s add withdrawing
+execute as @a[tag=withdrawing] run give @s diamond
+execute as @a[tag=withdrawing] run scoreboard players remove @s withdraw 1
+execute as @a[tag=!withdrawing,scores={withdraw=1..}] run scoreboard players add @s Diamond_Bank 1
+tell @a[tag=!withdrawing,scores={withdraw=1..}] You don't have that many to withdraw!
+execute as @a[tag=!withdrawing,scores={withdraw=1..}] run scoreboard players set @s withdraw 0
