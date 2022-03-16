@@ -2,11 +2,18 @@ tag @a remove spawnZone
 tag @a remove depositing
 tag @a remove withdrawing
 tag @a remove homing
+tag @a remove shopping
 tag @a remove quicktransferring
+tag @a remove paying
+tag @a remove helping
+tag @a remove cancelling
 scoreboard players enable @a deposit
 scoreboard players enable @a withdraw
 scoreboard players enable @a home
+scoreboard players enable @a help
+scoreboard players enable @a shop
 scoreboard players enable @a quicktransfer
+scoreboard players enable @a cancel
 
 tag @a[x=24,y=-100,z=-8,dx=55,dy=500,dz=55] add spawnZone
 gamemode adventure @a[tag=spawnZone,tag=!op,gamemode=!adventure]
@@ -43,3 +50,27 @@ tell @a[tag=homing] Teleporting home in 10 seconds!
 execute as @a[scores={hometimer=0..}] run scoreboard players remove @s hometimer 1
 execute as @a[scores={hometimer=0}] run tp 56 84 24
 tell @a[scores={hometimer=0}] Teleporting home!
+
+execute as @a[scores={shop=1..}] run tag @s add shopping
+execute as @a[tag=shopping] run scoreboard players set @s shop 0
+execute as @a[tag=shopping] run scoreboard players set @s shoptimer 200
+tell @a[tag=shopping] Teleporting to the Shopping District in 10 seconds!
+execute as @a[scores={shoptimer=0..}] run scoreboard players remove @s shoptimer 1
+execute as @a[scores={shoptimer=0}] run tp 348 66 201
+tell @a[scores={shoptimer=0}] Teleporting to the Shopping District!
+
+execute as @a[scores={cancel=1..}] run tag @a add cancelling
+execute as @a[tag=cancelling] run scoreboard players set @e shoptimer 0
+execute as @a[tag=cancelling] run scoreboard players set @e hometimer 0
+tell @a[tag=cancelling] Cancelling!
+
+execute as @a[scores={help=1..}] run tag @s add helping
+tellraw @a[tag=helping] {"text":"Commands:","color":"yellow"}
+tellraw @a[tag=helping] {"text":"/trigger deposit set <value> : Deposits diamonds to bank, <value> should be amount","color":"yellow"}
+tellraw @a[tag=helping] {"text":"/trigger withdraw set <value> : Withdraws diamonds from bank, <value> should be amount","color":"yellow"}
+tellraw @a[tag=helping] {"text":"/trigger quicktransfer set <value> : Transfers diamonds to nearest player, <value> should be amount","color":"yellow"}
+tellraw @a[tag=helping] {"text":"/trigger home : Teleports to spawn in 10 seconds.","color":"yellow"}
+tellraw @a[tag=helping] {"text":"/trigger shop : Teleports to the Shopping District in 10 seconds.","color":"yellow"}
+tellraw @a[tag=helping] {"text":"/trigger cancel : Stop Teleporting","color":"yellow"}
+tellraw @a[tag=helping] {"text":"/trigger help : Bring up this menu","color":"yellow"}
+execute as @a[scores={help=1..}] run scoreboard players set @s help 0
