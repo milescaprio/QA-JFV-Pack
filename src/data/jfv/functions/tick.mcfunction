@@ -62,6 +62,7 @@ tell @a[scores={shoptimer=0}] Teleporting to the Shopping District!
 execute as @a[scores={cancel=1..}] run tag @a add cancelling
 execute as @a[tag=cancelling] run scoreboard players set @e shoptimer 0
 execute as @a[tag=cancelling] run scoreboard players set @e hometimer 0
+execute as @a[tag=cancelling] run scoreboard players set @s cancel 0
 tell @a[tag=cancelling] Cancelling!
 
 execute as @a[scores={help=1..}] run tag @s add helping
