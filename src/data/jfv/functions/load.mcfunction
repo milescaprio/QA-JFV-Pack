@@ -11,5 +11,7 @@ scoreboard objectives add cancel trigger
 scoreboard objectives add home trigger
 scoreboard objectives add shop trigger
 scoreboard objectives add help trigger
+scoreboard objectives add craft trigger
+scoreboard objectives add enderchest trigger
 scoreboard objectives setdisplay sidebar Diamond_Bank
 tell @a Reloaded QA-JFV
