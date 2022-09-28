@@ -70,7 +70,7 @@ tell @a[tag=cancelling] Cancelling!
 execute as @a[scores={craft=1..},gamemode=!adventure] run setblock ~ ~ ~ crafting_table destroy
 execute as @a[scores={craft=1..}] run scoreboard players set @s craft 0
 
-execute as @a[scores={enderchest=1..,gamemode=!adventure}] run setblock ~ ~ ~ ender_chest destroy
+execute as @a[scores={enderchest=1..},gamemode=!adventure] run setblock ~ ~ ~ ender_chest destroy
 execute as @a[scores={enderchest=1..}] run scoreboard players set @s enderchest 0
 
 execute as @a[scores={help=1..}] run tag @s add helping
