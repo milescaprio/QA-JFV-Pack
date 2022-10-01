@@ -71,7 +71,7 @@ scoreboard players set @a[tag=shopping] shop 0
 scoreboard players set @a[tag=shopping] shoptimer 400
 tell @a[tag=shopping] Teleporting to the Shopping District in 20 seconds!
 scoreboard players remove @a[scores={shoptimer=0..}] shoptimer 1
-execute as @a[scores={shoptimer=0}] run tp 348 66 201
+execute as @a[scores={shoptimer=0}] run tp 50 70 120
 tell @a[scores={shoptimer=0}] Teleporting to the Shopping District!
 
 #teleport people to respawn or initialize warmup
