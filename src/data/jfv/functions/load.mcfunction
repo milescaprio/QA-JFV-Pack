@@ -3,6 +3,8 @@ scoreboard objectives add hometimer dummy
 scoreboard players set @a hometimer -1
 scoreboard objectives add shoptimer dummy
 scoreboard players set @a shoptimer -1
+scoreboard objectives add fighttimer dummy
+scoreboard players set @a fighttimer -1
 scoreboard objectives add respawntimer dummy
 scoreboard players set @a respawntimer -1
 scoreboard objectives add Diamond_Bank dummy
@@ -15,6 +17,7 @@ scoreboard objectives add quicktransfer trigger
 scoreboard objectives add cancel trigger
 scoreboard objectives add home trigger
 scoreboard objectives add shop trigger
+scoreboard objectives add fight trigger
 scoreboard objectives add help trigger
 scoreboard objectives add craft trigger
 scoreboard objectives add enderchest trigger
