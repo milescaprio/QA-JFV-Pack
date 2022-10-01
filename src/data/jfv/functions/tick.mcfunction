@@ -81,7 +81,7 @@ scoreboard players remove @a[scores={respawntimer=0..}] respawntimer 1
 tell @a[scores={respawntimer=6}] Teleporting to Respawn!
 execute as @a[scores={respawntimer=4}] run gamerule keepInventory true 
 kill @a[scores={respawntimer=2}]
-execute as @a[scores={respawntimer=0}] gamerule keepInventory false
+execute as @a[scores={respawntimer=0}] run gamerule keepInventory false
 scoreboard players remove @a[scores={respawntimer=0}] Deaths 1
 
 #manage cancel trigger
