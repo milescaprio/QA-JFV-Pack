@@ -7,6 +7,7 @@ scoreboard objectives add respawntimer dummy
 scoreboard players set @a respawntimer -1
 scoreboard objectives add Diamond_Bank dummy
 scoreboard objectives add Deaths deathCount 
+scireboard objectives add Health health 
 scoreboard objectives setdisplay list Deaths
 scoreboard objectives add deposit trigger
 scoreboard objectives add withdraw trigger
