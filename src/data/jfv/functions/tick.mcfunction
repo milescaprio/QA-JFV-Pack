@@ -1,3 +1,6 @@
+#for the respawn trigger, instant respawn must be enabled
+gamerule doImmediateRespawn true
+
 #remove these tags, theyll get added back
 tag @a remove spawnZone
 tag @a remove depositing
