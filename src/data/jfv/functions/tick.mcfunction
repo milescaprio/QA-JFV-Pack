@@ -81,9 +81,9 @@ scoreboard players set @a[tag=respawning] respawntimer 400
 tell @a[tag=respawning] Teleporting to Respawn in 20 seconds!
 scoreboard players remove @a[scores={respawntimer=0..}] respawntimer 1
 #on, kill, off, they go home, and death counter decrements
-tell @a[scores={respawntimer=6}] Teleporting to Respawn!
-execute as @a[scores={respawntimer=4}] run gamerule keepInventory true 
-kill @a[scores={respawntimer=2}]
+tell @a[scores={respawntimer=12}] Teleporting to Respawn!
+execute as @a[scores={respawntimer=8}] run gamerule keepInventory true 
+kill @a[scores={respawntimer=4}]
 execute as @a[scores={respawntimer=0}] run gamerule keepInventory false
 scoreboard players remove @a[scores={respawntimer=0}] Deaths 1
 
