@@ -1,0 +1,2 @@
+execute at @e[tag=offerer_flag,limit=1] run data modify storage offer1 Items set from block ~ ~-0.5 ~ Items
+execute at @e[tag=accepter_flag,limit=1] run data modify storage offer2 Items set from block ~ ~-0.5 ~ Items
