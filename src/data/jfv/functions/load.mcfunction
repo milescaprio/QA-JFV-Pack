@@ -7,7 +7,8 @@ scoreboard players set @a fighttimer -1
 scoreboard objectives add respawntimer dummy
 scoreboard players set @a respawntimer -1
 scoreboard objectives add offer_trade_timer dummy
-scoreboard players set @a offer_trade_timer -1
+scoreboard players set #global offer_trade_timer -1
+function jfv:end_trade
 
 scoreboard objectives add deduceSucess dummy
 scoreboard objectives add Diamond_Bank dummy

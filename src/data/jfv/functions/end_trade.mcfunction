@@ -1,5 +1,6 @@
 kill @e[tag=offerer_flag]
 kill @e[tag=accepter_flag]
-tag remove @a offerer
-tag remove @a accepter
-scoreboard players set @a offer_trade_timer -1
+tag @a remove offerer
+tag @a remove accepter
+tag @a remove trade_confirmed
+scoreboard players set #global offer_trade_timer -1
