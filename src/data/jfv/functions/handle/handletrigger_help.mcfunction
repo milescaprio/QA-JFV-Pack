@@ -10,3 +10,4 @@ tellraw @s {"text":"/trigger trade_help : Help on how to use trade commands","co
 #tellraw @s {"text":"/trigger craft : Set current block to crafting table, for easy crafting","color":"yellow"}
 #tellraw @s {"text":"/trigger enderchest : Set current block to enderchest, for easy inventory management","color":"yellow"}
 tellraw @s {"text":"/trigger help : Bring up this menu","color":"yellow"}
+execute as @s run scoreboard players set @s help 0

@@ -5,3 +5,4 @@ tellraw @s {"text":"/trigger accept_trade : Make a counteroffer with the active 
 tellraw @s {"text":"/trigger confirm_trade : Confirm the trade. After the items are reviewed and both players agree, they must both do so before it is processed.","color":"yellow"}
 tellraw @s {"text":"/trigger cancel_trade : Abort the trade if it hasn't been processed yet. Both parties may do so.","color":"yellow"}
 tellraw @s {"text":"/trigger trade_help : Bring up this menu","color":"yellow"}
+scoreboard players set @s trade_help 0
