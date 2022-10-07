@@ -74,9 +74,9 @@ execute if score #global offer_trade_timer matches 1.. run function jfv:handle/h
 execute if score #global offer_trade_timer matches 0 run tellraw @a {"text":"","color":"blue","extra":[{"selector":"@a[tag=offerer]"},{"text":"'s trade has expired!"}]}
 execute if score #global offer_trade_timer matches 0 run function jfv:end_trade
 
-execute as @a[scores={offer_trade=1..},limit=1] run function jfv:handle/handletrigger_offer_trade
+execute as @a[scores={offer_trade=1..},limit=1] run function jfv:handle/handletriggerall_offer_trade
 
-execute as @a[scores={accept_trade=1..},limit=1] run function jfv:handle/handletrigger_accept_trade
+execute as @a[scores={accept_trade=1..},limit=1] run function jfv:handle/handletriggerall_accept_trade
 
 execute as @a[scores={cancel_trade=1..}] run function jfv:handle/handletrigger_cancel_trade
 
