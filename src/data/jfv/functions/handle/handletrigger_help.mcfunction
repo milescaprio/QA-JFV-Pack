@@ -8,6 +8,7 @@ tellraw @s {"text":"/trigger fight : Teleports to fight zone in 20 seconds.","co
 tellraw @s {"text":"/trigger respawn : Teleports to your spawn point in 20 seconds. Warning: if loading out of a dimension takes over 7.5 seconds, your items will be lost.","color":"yellow"}
 tellraw @s {"text":"/trigger cancel : Stop Teleporting","color":"yellow"}
 tellraw @s {"text":"/trigger trade_help : Help on how to use trade commands","color":"yellow"}
+#deprecated
 #tellraw @s {"text":"/trigger craft : Set current block to crafting table, for easy crafting","color":"yellow"}
 #tellraw @s {"text":"/trigger enderchest : Set current block to enderchest, for easy inventory management","color":"yellow"}
 tellraw @s {"text":"/trigger help : Bring up this menu","color":"yellow"}

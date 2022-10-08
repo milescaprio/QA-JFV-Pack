@@ -58,11 +58,11 @@ execute as @a[scores={cancel=1..}] run function jfv:handle/handletrigger_cancel
 
 
 
-#manage enderchest and craft trigger, right now not working
-execute as @a[scores={craft=1..},gamemode=!adventure] run setblock ~ ~ ~ crafting_table destroy
-scoreboard players set @a[scores={craft=1..}] craft 0
-execute as @a[scores={enderchest=1..},gamemode=!adventure] run setblock ~ ~ ~ ender_chest destroy
-scoreboard players set @a[scores={enderchest=1..}] enderchest 0
+#manage enderchest and craft trigger, deprecated
+#execute as @a[scores={craft=1..},gamemode=!adventure] run setblock ~ ~ ~ crafting_table destroy
+#scoreboard players set @a[scores={craft=1..}] craft 0
+#execute as @a[scores={enderchest=1..},gamemode=!adventure] run setblock ~ ~ ~ ender_chest destroy
+#scoreboard players set @a[scores={enderchest=1..}] enderchest 0
 
 
 

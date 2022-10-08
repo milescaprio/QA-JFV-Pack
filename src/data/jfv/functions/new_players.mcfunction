@@ -8,8 +8,10 @@ scoreboard players enable @a fight
 scoreboard players enable @a respawn
 scoreboard players enable @a quicktransfer
 scoreboard players enable @a cancel
-scoreboard players enable @a craft
-scoreboard players enable @a enderchest
+#deprecated
+scoreboard objectives remove craft
+scoreboard objectives remove enderchest
+
 scoreboard players enable @a trade_help
 scoreboard players enable @a offer_trade
 scoreboard players enable @a view_trade
