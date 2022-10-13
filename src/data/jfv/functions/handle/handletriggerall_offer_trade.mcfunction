@@ -6,11 +6,12 @@ execute as @a[tag=offerer] run execute as @s run scoreboard players set @s offer
 #convert to temporary tag, limit 1 so we can detect a second next tick
 #unnecessary using triggerall call, but it's a nice way to show how to use it
 tag @s[scores={offer_trade=1..}] add offering_trade
+execute if score #global offer_trade_timer matches -1 run function jfv:end_trade
 scoreboard players set @s offer_trade 0
 
 #initialize if player is on top of chest; add eventlong tag
 #if player is standing on chest we can spawn the offerer flag bunny
-execute as @s[tag=offering_trade] at @s run execute if block ~ ~-0.5 ~ minecraft:chest run summon rabbit ~ ~ ~ {Age:-25000,RabbitType:4,Invulnerable:1,PersistenceRequired:0,Silent:1,NoAI:1,Tags:["offerer_flag"],ActiveEffects:[{Id:14,Amplifier:0,Duration:999999,ShowParticles:0b}]}
+execute as @s[tag=offering_trade] at @s run execute if block ~ ~-0.5 ~ minecraft:chest run summon rabbit ~ ~ ~ {Age:-25000,RabbitType:4,Invulnerable:1,PersistenceRequired:1b,Silent:1,NoAI:1,Tags:["offerer_flag"],ActiveEffects:[{Id:14,Amplifier:0,Duration:999999,ShowParticles:0b}]}
 #if the bunny exists now, it's new, we can start the trade
 execute as @s at @s run execute as @e[tag=offerer_flag] run tag @p[tag=offering_trade] add offerer
 execute as @s[tag=offering_trade,tag=!offerer] run tellraw @s {"text":"You must be on top of a chest to offer a trade!","color":"red"}

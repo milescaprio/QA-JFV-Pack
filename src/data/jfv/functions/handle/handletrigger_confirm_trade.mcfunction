@@ -1,6 +1,7 @@
 #manage confirm trade trigger
 tag @s[tag=offerer] add trade_confirmed
 tag @s[tag=accepter] add trade_confirmed
+tellraw @s[tag=trade_confirmed] {"text":"Trade confirmed! Waiting for other person...","color":"green"}
 tellraw @s[tag=!trade_confirmed] {"text":"You are not in a trade!","color":"red"}
 scoreboard players set @s confirm_trade 0
 #complete trade, limit 1 just to be safe
