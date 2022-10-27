@@ -68,9 +68,9 @@ execute as @a[scores={cancel=1..}] run function jfv:handle/handletrigger_cancel
 
 #manage active trading triggers
 #tick down trade timeout timer
-execute if score #global offer_trade_timer matches 0.. run scoreboard players remove #global offer_trade_timer 1
-execute if score #global offer_trade_timer matches 1.. run function jfv:count_trades
-execute if score #global offer_trade_timer matches 1.. run function jfv:handle/handle_trade_errors
+execute if score #global offer_trade_timer matches 1.. run scoreboard players remove #global offer_trade_timer 1
+execute if score #global offer_trade_timer matches 0.. run function jfv:count_trades
+execute if score #global offer_trade_timer matches 0.. run function jfv:handle/handle_trade_errors
 execute if score #global offer_trade_timer matches 0 run tellraw @a {"text":"","color":"blue","extra":[{"selector":"@a[tag=offerer]"},{"text":"'s trade has expired!"}]}
 execute if score #global offer_trade_timer matches 0 run function jfv:end_trade
 
